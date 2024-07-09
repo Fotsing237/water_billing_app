@@ -1,8 +1,5 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:water_billing_app/app/data/models/users_model.dart';
 import 'package:water_billing_app/app/data/service/services.dart';
 
 class UserController extends GetxController with StateMixin<List> {
