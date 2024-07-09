@@ -16,9 +16,9 @@ class UsersCard extends GetView<UserController> {
     UserController userController = Get.put(UserController());
 
     return controller.obx(
-      (userController) => ListView.builder(
+      (state) => ListView.builder(
           scrollDirection: Axis.vertical,
-          itemCount: userController!.length,
+          itemCount: state!.length,
           itemBuilder: (context, index) {
             return Card(
                 margin: const EdgeInsets.only(
@@ -41,12 +41,12 @@ class UsersCard extends GetView<UserController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '${userController[index]['name']}',
+                        '${state[index]['name']}',
                         style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        '${userController[index]['phone']}',
+                        '${state[index]['phone']}',
                         style: TextStyle(fontSize: 15, color: ColorsApp.indigo),
                       )
                     ],
@@ -63,10 +63,8 @@ class UsersCard extends GetView<UserController> {
                               IconButton(
                                 onPressed: () {
                                   Navigator.of(context).pop();
-                                  Get.toNamed(
-                                    AppRoutes.addUsers,
-                                    arguments: userController[index]
-                                  );
+                                  Get.toNamed(AppRoutes.addUsers,
+                                      arguments: state[index]);
                                 },
                                 icon: const Icon(Icons.edit),
                                 color: Colors.white,
@@ -74,6 +72,7 @@ class UsersCard extends GetView<UserController> {
                               IconButton(
                                 onPressed: () {
                                   Navigator.of(context).pop();
+                                  userController.deleteItem(state[index]['id']);
                                 },
                                 icon: const Icon(Icons.delete),
                                 color: Colors.red,
@@ -85,7 +84,10 @@ class UsersCard extends GetView<UserController> {
                     },
                   ),
                   onTap: () {
-                    // Get.toNamed();
+                    Get.toNamed(
+                      AppRoutes.userDetails, 
+                      arguments: state[index]
+                    );
                   },
                 ));
           }),

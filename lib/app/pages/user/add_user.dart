@@ -7,8 +7,8 @@ import 'package:water_billing_app/app/utils/components/app_colors.dart';
 import 'package:water_billing_app/app/utils/components/image_picker_controller.dart';
 import 'package:water_billing_app/app/utils/widgets/button.dart';
 
-class AddUserPage extends StatelessWidget {
-  AddUserPage({super.key});
+class AddUserScreen extends StatelessWidget {
+  AddUserScreen({super.key});
 
   final formKey = GlobalKey<FormState>();
 

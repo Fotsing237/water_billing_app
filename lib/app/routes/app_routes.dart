@@ -1,12 +1,14 @@
 import 'package:get/get.dart';
 import 'package:water_billing_app/app/pages/home/home_screen.dart';
 import 'package:water_billing_app/app/pages/user/add_user.dart';
-import 'package:water_billing_app/app/pages/user/user_list_page.dart';
+import 'package:water_billing_app/app/pages/user/user_details.dart';
+import 'package:water_billing_app/app/pages/user/user_list.dart';
 
 class AppRoutes {
   static String home = '/';
   static String users = '/users';
   static String addUsers = '/addUsers';
+  static String userDetails = '/userDetails';
   static String bills = '/bills';
   static String addBills = '/addbills';
 
@@ -18,10 +20,20 @@ class AppRoutes {
 
   static List<GetPage> routes = [
     GetPage(name: home, page: () => const HomeScreen()),
-    GetPage(name: users, page: () => const UsersListPage(), transition: Transition.leftToRightWithFade, transitionDuration: const Duration(seconds: 1)),
-    GetPage(name: addUsers, page: () => AddUserPage(), transition: Transition.zoom, transitionDuration: const Duration(seconds: 1)),
-    // GetPage(name: home, page: () => const HomeScreen()),
-    // GetPage(name: home, page: () => const HomeScreen()),
-    
+    GetPage(
+        name: users,
+        page: () => const UsersListScreen(),
+        transition: Transition.rightToLeftWithFade,
+        transitionDuration: const Duration(seconds: 1)),
+    GetPage(
+        name: addUsers,
+        page: () => AddUserScreen(),
+        transition: Transition.zoom,
+        transitionDuration: const Duration(seconds: 1)),
+    GetPage(
+        name: userDetails,
+        page: () => UserDetailsScreen(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(seconds: 1)),
   ];
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:water_billing_app/app/pages/home/home_widgets/home_stack.dart';
-import 'package:water_billing_app/app/pages/user/user_list_page.dart';
+import 'package:water_billing_app/app/pages/user/user_list.dart';
 import 'package:water_billing_app/app/routes/app_routes.dart';
 import 'package:water_billing_app/app/utils/components/app_colors.dart';
 import 'package:water_billing_app/app/utils/widgets/users_card.dart';

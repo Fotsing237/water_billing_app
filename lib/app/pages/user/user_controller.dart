@@ -45,7 +45,7 @@ class UserController extends GetxController with StateMixin<List> {
         change(null, status: RxStatus.empty());
       } else {
         // success
-        print('users ===================================> ${userList.length}');
+        print('users ===================================> ${userList}');
         change(userList, status: RxStatus.success());
       }
     } catch (e) {
@@ -106,5 +106,24 @@ class UserController extends GetxController with StateMixin<List> {
     } catch (e) {
       throw Exception(e.toString());
     }
+  }
+
+  Future<void> deleteItem(String id) async {
+    final myUrl = '/Users/$id';
+    final response =
+        await httpService.request(method: RequestMethod.delete, url: myUrl);
+
+    if (response != null) {
+      final filtered =
+          userList.where((element) => element['id'] != id).toList();
+      userList.clear();
+      for (var user in filtered) {
+        userList.add(user);
+      }
+      // success
+      print(
+          'users after deletion ===================================> ${userList.length}');
+      getUsers();
+    } else {}
   }
 }

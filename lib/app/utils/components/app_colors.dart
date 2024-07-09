@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class ColorsApp {
   static Color deepBlue = const Color.fromRGBO(27, 20, 100, 1);
   static Color skyBlue = const Color.fromARGB(255, 143, 206, 233);
+  static Color skyBlue2 = const Color(0xFFc5e5f3);
+  static Color lightSkyBlue = const Color(0xFFfcfffe);
   static Color lighterSkyBlue1 = const Color(0xFFc5e5f3);
   static Color lighterSkyBlue2 = const Color(0xFFebf8fd);
   static Color lightGrey = const Color.fromARGB(255, 228, 228, 228);

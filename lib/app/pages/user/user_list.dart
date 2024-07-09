@@ -4,14 +4,15 @@ import 'package:water_billing_app/app/routes/app_routes.dart';
 import 'package:water_billing_app/app/utils/components/app_colors.dart';
 import 'package:water_billing_app/app/utils/widgets/users_card.dart';
 
-class UsersListPage extends StatelessWidget {
-  const UsersListPage({super.key});
+class UsersListScreen extends StatelessWidget {
+  const UsersListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFFc5e5f3),
+        centerTitle: true,
         title: const Center(
           child: Text(
             'All Users',

@@ -22,7 +22,7 @@ class HomeStack extends GetView<SuretyController> {
       padding: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
-        color: const Color(0xFFfcfffe),
+        color: ColorsApp.lightSkyBlue,
         boxShadow: [
           BoxShadow(
               blurRadius: 20,
